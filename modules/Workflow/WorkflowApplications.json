@@ -191,7 +191,7 @@
       },
       {
         "Name": "Site Response",
-        "ExecutablePath": "applications/createEVENT/siteResponse/SiteResponse",
+        "ExecutablePath": "applications/createEVENT/siteResponse/SiteResponse.py",
         "ApplicationSpecificInputs": [
 	]
       },
@@ -386,6 +386,11 @@
       {
         "Name": "MDOF_BuildingModel",
         "ExecutablePath": "applications/createSAM/mdofBuildingModel/MDOF_BuildingModel",
+        "ApplicationSpecificInputs": []
+      },
+      {
+        "Name": "SteelBuildingModel",
+        "ExecutablePath": "applications/createSAM/AutoSDA/main_program.py",
         "ApplicationSpecificInputs": []
       }
     ]
