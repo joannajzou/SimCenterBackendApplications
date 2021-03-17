@@ -178,12 +178,6 @@
     },
     "Applications": [
       {
-        "Name": "SimCenterEvent",
-        "ExecutablePath": "applications/createEVENT/SimCenterEvent.py",
-        "ApplicationSpecificInputs": [
-	]
-      },
-      {
         "Name": "ExistingSimCenterEvents",
         "ExecutablePath": "applications/createEVENT/multipleSimCenter/MultipleSCEvents",
         "ApplicationSpecificInputs": [
@@ -201,6 +195,32 @@
         "ApplicationSpecificInputs": [
 	]
       },
+      {
+        "Name": "Regional Site Response",
+        "ExecutablePath": "applications/createEVENT/siteResponse/RegionalSiteResponse.py",
+        "ApplicationSpecificInputs": [
+          {
+            "id": "pathEventData",
+            "type": "path",
+            "description": "Path to directory containing event data files in SimCenter format"
+          },
+          {
+            "id": "modelPath",
+            "type": "path",
+            "description": "Defines the location of the OpenSees tcl model files."
+          },
+          {
+            "id": "mainScript",
+            "type": "string",
+            "description": "Defines the name of the main model file."
+          },
+          {
+            "id": "ndm",
+            "type": "int",
+            "description": "Defines the number of degrees of freedom in the numerical model."
+          }
+        ]
+      },	
       {
         "Name": "HazardBasedEvent",
         "ExecutablePath": "applications/createEVENT/hazardBasedEvent/HazardBasedEvent.py",
@@ -257,6 +277,20 @@
 		}]
       },
       {
+        "Name": "GeoClawOpenFOAM",
+        "ExecutablePath": "applications/createEVENT/GeoClawOpenFOAM/GeoClawOpenFOAM.py",
+        "ApplicationSpecificInputs":[
+		{
+			"id":"OpenFOAMCase",
+			"type":"string",
+            "description": "Remote directory containing OpenFOAM case input"
+		},{
+			"id":"OpenFOAMSolver",
+			"type":"string",
+            "description": "OpenFOAM solver used"
+		}]
+      },
+      {
         "Name": "NNGM",
         "ExecutablePath": "applications/createEVENT/NNGM/NNGM.py",
         "ApplicationSpecificInputs": [
@@ -286,7 +320,13 @@
       {
         "Name": "SimCenterEvent",
         "ExecutablePath": "applications/createEVENT/SimCenterEvent/SimCenterEvent.py",
-        "ApplicationSpecificInputs": []
+        "ApplicationSpecificInputs": [
+          {
+            "id": "inputUnit",
+            "type": "string",
+            "description": "Units of the data in the input file"
+          }
+        ]
       },
       {
         "Name": "ASCE7_WindSpeed",
@@ -350,7 +390,18 @@
       {
         "Name": "OpenSeesInput",
         "ExecutablePath": "applications/createSAM/openSeesInput/OpenSeesInput",
-        "ApplicationSpecificInputs": []
+        "ApplicationSpecificInputs": [
+          {
+            "id": "fileName",
+            "type": "string",
+            "description": "Defines the name of the main OpenSees model file."
+          },
+          {
+            "id": "filePath",
+            "type": "string",
+            "description": "Defines the location of the main OpenSees model file."
+          }
+        ]
       },
       {
         "Name": "OpenSeesPyInput",
